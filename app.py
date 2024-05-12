@@ -51,14 +51,14 @@ dialects, meanings = read_dialects(file_path)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('.\index.html')
 
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         user_text = request.form['text']
         found_dialects = find_dialects(user_text, dialects, meanings)
-        return render_template('index.html', found_dialects=found_dialects)
+        return render_template('.\index.html', found_dialects=found_dialects)
 
 if __name__ == '__main__':
     app.run(debug=True)
