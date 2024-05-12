@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pymorphy3
 
-app = Flask(__name__, template_folder='C:/pythonProject3')
+app = Flask(__name__)
 
 morph = pymorphy3.MorphAnalyzer(lang='uk')
 
@@ -45,7 +45,7 @@ def find_dialects(text, dialects, meanings):
     return list(found_dialects)
 
 
-file_path = "C:\pythonProject3\prepared_corpus.txt"
+file_path = ".\prepared_corpus.txt"
 
 dialects, meanings = read_dialects(file_path)
 
